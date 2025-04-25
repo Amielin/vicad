@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Operario</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="flex h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-lg p-5 flex flex-col items-start space-y-6">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="w-32 mx-auto">
+      <p class="text-gray-500 text-sm">Rol: <span class="font-semibold">Operario</span></p>
+
+      <nav class="flex flex-col space-y-3 w-full">
+        <a href="#nuevos" class="flex items-center gap-2 text-gray-700 hover:bg-blue-100 p-2 rounded transition-all duration-300">
+          <i class='bx bx-folder-plus'></i> Nuevos Pedidos
+        </a>
+        <a href="#historial" class="flex items-center gap-2 text-gray-700 hover:bg-blue-100 p-2 rounded transition-all duration-300">
+          <i class='bx bx-history'></i> Historial
+        </a>
+        <a href="#produccion" class="flex items-center gap-2 text-gray-700 hover:bg-blue-100 p-2 rounded transition-all duration-300">
+          <i class='bx bx-cog'></i> Producción
+        </a>
+        <a href="#ia" class="flex items-center gap-2 text-gray-700 hover:bg-blue-100 p-2 rounded transition-all duration-300">
+          <i class='bx bx-brain'></i> Herramienta IA (DXF)
+        </a>
+        <a href="{{ url_for('logout') }}" class="mt-auto flex items-center gap-2 text-red-500 hover:bg-red-100 p-2 rounded transition-all duration-300">
+          <i class='bx bx-log-out'></i> Cerrar sesión
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <main class="flex-1 overflow-y-auto p-8 space-y-8">
+      <section id="nuevos" class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+        <h2 class="text-xl font-semibold mb-2">📋 Nuevos Pedidos</h2>
+        <p class="text-gray-600">Aquí irá el CRUD de nuevos pedidos.</p>
+      </section>
+
+      <section id="historial" class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+        <h2 class="text-xl font-semibold mb-2">📜 Historial de Pedidos</h2>
+        <p class="text-gray-600">Aquí irá el CRUD del historial.</p>
+      </section>
+
+      <section id="produccion" class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+        <h2 class="text-xl font-semibold mb-2">🏭 Gestión de Producción</h2>
+        <p class="text-gray-600">Aquí el operario seleccionará el estado del pedido.</p>
+      </section>
+
+      <section id="ia" class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+        <h2 class="text-xl font-semibold mb-2">🤖 Herramienta IA DXF</h2>
+        <p class="text-gray-600">Aquí se podrá subir el archivo DXF y procesarlo más adelante.</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
